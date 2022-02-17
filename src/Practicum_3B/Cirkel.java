@@ -6,11 +6,17 @@ public class Cirkel {
 	private int yPositie;
 
 	public Cirkel(int rad, int xP, int yP) {
-		radius = rad;
+		if ( rad == 0 ) {
+			{throw new IllegalArgumentException("Radius cannot be zero");}
+		} else {
+			radius = rad;
+		}
 		xPositie = xP;
 		yPositie = yP;
 	}
-	public void setRadius(int rad) {radius = rad; }
+	public void setRadius(int rad) {
+			radius = rad;		}
+
 	public void setxPositie(int xP) {xPositie = xP; }
 	public void setyPositie(int yP) {yPositie = yP; }
 
@@ -21,16 +27,6 @@ public class Cirkel {
 	public String concatXY() {
 		String xy = "(" + getxPositie() + ", " + getyPositie() + ")";
 		return xy; }
-
-	public int testradiusNotZero() {
-		try {
-			int radius = getRadius();
-			int test = radius / 2;
-			return radius;
-		} catch (IllegalArgumentException iae) {
-			System.out.println(iae.getMessage());
-		}
-	return 0;}
 
 	public String toString() {
 		String s = "cirkel " + concatXY() + " met radius: " + getRadius();
