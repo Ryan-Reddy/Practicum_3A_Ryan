@@ -6,17 +6,15 @@ public class Cirkel {
 	private int yPositie;
 
 	public Cirkel(int rad, int xP, int yP) {
-		if ( rad == 0 ) {
-			{throw new IllegalArgumentException("Radius cannot be zero");}
+		if ( rad <= 0 ) {
+			{throw new IllegalArgumentException("Radius cannot be zero or less");}
 		} else {
 			radius = rad;
 		}
 		xPositie = xP;
 		yPositie = yP;
 	}
-	public void setRadius(int rad) {
-			radius = rad;		}
-
+	public void setRadius(int rad) { radius = rad; }
 	public void setxPositie(int xP) {xPositie = xP; }
 	public void setyPositie(int yP) {yPositie = yP; }
 
