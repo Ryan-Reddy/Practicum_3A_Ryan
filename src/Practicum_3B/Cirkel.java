@@ -11,6 +11,7 @@ public class Cirkel {
 		} else {
 			radius = rad;
 		}
+
 		xPositie = xP;
 		yPositie = yP;
 	}

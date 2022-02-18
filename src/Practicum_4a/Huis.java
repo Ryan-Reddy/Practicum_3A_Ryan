@@ -12,13 +12,11 @@ public class Huis {
 
     public void setAdres (String adr) { adres = adr; }
     public void setBouwjaar (int bwj) { bouwjaar = bwj; }
-
+    public void setHuisbaas (Persoon p) { huisbaas = p; }
     public String getAdres () { return adres; }
     public int getBouwjaar () { return bouwjaar; }
 
-    public void setHuisbaas (Persoon p) {
-         huisbaas = p;
-    }
+
     public Persoon getHuisbaas () {
         return huisbaas;
     }
