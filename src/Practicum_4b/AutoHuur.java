@@ -15,13 +15,18 @@ public class AutoHuur {
 
     public void setAantalDagen(int aD) {aantalDagen = aD;}
 
-    public void setHuurder(Klant hrd) {huurder = hrd;}
+    public void setHuurder(Klant hrd) {
+        if (hrd != null) {
+            huurder = hrd;
+
+        }
+            throw new IllegalArgumentException("one can't be null");
+    }
 
     public void setGehuurdeAuto(Auto gAuto) {gehuurdeAuto = gAuto;}
 
     public int getAantalDagen() {return aantalDagen;}
 
-        // worden beveiligd  tegen  huurder == null.
     public Klant getHuurder() {
         return huurder;
     }
