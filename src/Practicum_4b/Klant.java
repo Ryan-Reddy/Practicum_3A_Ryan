@@ -4,8 +4,7 @@ public class Klant {
     private String naam;
     private double kortingsPercentages;
 
-    public Klant( String nm ) {
-
+    public Klant( String nm )  {
             naam = nm;
         }
 
@@ -15,7 +14,6 @@ public class Klant {
 
     public String getNaam(String nm) {
         return naam; }
-        // worden beveiligd  tegen  huurder == null.
 
     public String toString() {
         return naam + " (korting: " + kortingsPercentages +

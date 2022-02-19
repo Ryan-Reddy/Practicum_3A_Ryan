@@ -6,9 +6,7 @@ public class Main {
     System.out.println("Eerste autohuur:\n" + ah1 + "\n");
 
     Klant k = new Klant("Mijnheer de Vries");
-    try {
-    k.setKorting(10.0);}
-    catch IllegalArgumentException {}
+    k.setKorting(10.0);
     ah1.setHuurder(k);
     System.out.println("Eerste autohuur:\n" + ah1 + "\n");
 
