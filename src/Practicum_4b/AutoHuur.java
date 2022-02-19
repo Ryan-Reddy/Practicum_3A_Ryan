@@ -12,27 +12,26 @@ public class AutoHuur {
         }
 
 
-
-    public void setAantalDagen(int aD) {aantalDagen = aD;}
+    public void setAantalDagen(int aD) {
+        if (aD > 0) {
+            aantalDagen = aD;
+        } else {
+            throw new IllegalArgumentException("cannot be a negative period");
+        }
+    }
 
     public void setHuurder(Klant hrd) {
-        if (hrd != null) {
             huurder = hrd;
-
-        }
-            throw new IllegalArgumentException("one can't be null");
     }
 
-    public void setGehuurdeAuto(Auto gAuto) {gehuurdeAuto = gAuto;}
+    public void setGehuurdeAuto(Auto gAuto) {
+        gehuurdeAuto = gAuto;}
 
     public int getAantalDagen() {return aantalDagen;}
-
-    public Klant getHuurder() {
-        return huurder;
+    public Klant getHuurder() { return huurder;}
+    public Auto getGehuurdeAuto() {
+        return gehuurdeAuto;        // moet beveiligd tegen gehuurdeAuto == null
     }
-
-        // worden beveiligd tegen gehuurdeAuto == null
-    public Auto getGehuurdeAuto() {return gehuurdeAuto;}
 
     public double totaalPrijs() {
         return aantalDagen * 100;
@@ -40,7 +39,14 @@ public class AutoHuur {
 
     @Override
     public String toString() {
-        return "autotype: " + gehuurdeAuto + "\n" +
+//        if (gehuurdeAuto == null) {
+//            return "Er is geen auto bekend." + "\n" +
+//                    "op naam van: " + huurder + "\n" +
+//                    "aantal dagen: " + aantalDagen + " en dat kost //{add pricecalc. someplace.} " + "\n" +
+//                    "//  en dat kost 3150.0\t" + totaalPrijs();
+//        }
+
+        return gehuurdeAuto + "\n" +
                 "op naam van: " + huurder + "\n" +
                 "aantal dagen: " + aantalDagen + " en dat kost //{add pricecalc. someplace.} " + "\n" +
                 "//  en dat kost 3150.0\t" + totaalPrijs();
