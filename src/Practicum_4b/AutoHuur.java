@@ -45,58 +45,49 @@ public class AutoHuur {
     }
 
     public double totaalPrijs() {
-//        if gehuurdeAuto
-        return aantalDagen * 2;
-//                gehuurdeAuto.getPrijsPerdag();
+        double info = (aantalDagen * (gehuurdeAuto.getPrijsPerdag() * (1 - huurder.getKorting()/100)));
+        return info;
     }
 
     @Override
     public String toString() {
-        if (gehuurdeAuto == null) {
+        if (gehuurdeAuto == null && huurder == null) {
+            return
+                "er is geen auto bekend" + "\n" +
+                "er is geen huurder bekend" + "\n" +
+                "aantal dagen: " + aantalDagen + " en dat kost 0";
+        }
+        if (gehuurdeAuto == null && huurder != null) {
             return
                 "er is geen auto bekend" + "\n" +
                 "op naam van: " + huurder + "\n" +
-                "aantal dagen: " + aantalDagen + " en dat kost //{add pricecalc. someplace.} " + "\n" +
-                "//  en dat kost 3150.0\t" + totaalPrijs(); }
-        if (huurder == null) {
+                "aantal dagen: " + aantalDagen; }
+
+        if (gehuurdeAuto != null && huurder == null) {
             return
                 gehuurdeAuto + "\n" +
-                "op naam van: " + "<onbekend>" + "\n" +
-                "aantal dagen: " + aantalDagen + " en dat kost //{add pricecalc. someplace.} " + "\n" +
-                "//  en dat kost 3150.0\t" + totaalPrijs(); }
+                "er is geen huurder bekend" + "\n" +
+                "aantal dagen: " + aantalDagen + " en dat kost 0"; }
         else {
             return
                 gehuurdeAuto + "\n" +
                 "op naam van: " + huurder + "\n" +
-                "aantal dagen: " + aantalDagen + " en dat kost //{add pricecalc. someplace.} " + "\n" +
-                "//  en dat kost 3150.0\t" + totaalPrijs();
+                "aantal dagen: " + aantalDagen +"\nvoor een totaalprijs: " + totaalPrijs();
         }
     }
 }
 
 
-//Let op: Bij het aanmaken van een AutoHuur-object is de multipliciteit van de beide associaties 0. Er moet
 
 
-//Eerste autohuur:
-//  er is geen auto bekend
-//  er is geen huurder bekend
-//  aantal dagen: 0 en dat kost 0.0
-//
-//Eerste autohuur:
-//  er is geen auto bekend
-//  op naam van: Mijnheer de Vries (korting: 10.0%)
-//  aantal dagen: 0 en dat kost 0.0
-//
-//Eerste autohuur:
-//  autotype: Peugeot 207 met prijs per dag: 50.0
-//  op naam van: Mijnheer de Vries (korting: 10.0%)
-//  aantal dagen: 4 en dat kost 180.0
-//
-//Tweede autohuur:
-//  autotype: Ferrari met prijs per dag: 3500.0
-//  op naam van: Mijnheer de Vries (korting: 10.0%)
-//  aantal dagen: 1 en dat kost 3150.0
-//
-//Gehuurd: Peugeot 207 met prijs per dag: 50.0
-//Gehuurd: Ferrari met prijs per dag: 3500.0
+
+
+
+
+
+
+
+
+
+
+

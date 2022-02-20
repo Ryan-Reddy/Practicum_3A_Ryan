@@ -13,11 +13,7 @@ public class Klant {
     public double getKorting() { return kortingsPercentages; }
 
     public String getNaam(String nm) {
-//        if (nm != null) {
             return naam;
-//        } else {
-//            return "no user";
-//        }
     }
 
     public String toString() {
