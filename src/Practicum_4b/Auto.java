@@ -13,9 +13,10 @@ public class Auto {
         prijsPerDag = prPD;
     }
 
-    public double setPrijsPerdag() {
+    public double getPrijsPerdag() {
         return prijsPerDag;
     }
+
 
     public String toString() {
         if (type != null) {

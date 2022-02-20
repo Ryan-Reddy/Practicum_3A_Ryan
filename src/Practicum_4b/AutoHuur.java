@@ -1,5 +1,7 @@
 package Practicum_4b;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class AutoHuur {
     private int aantalDagen;
     private Klant huurder;
@@ -9,7 +11,7 @@ public class AutoHuur {
         aantalDagen = aD;
         huurder = hrd;
         gehuurdeAuto = gAuto;
-        }
+    }
 
 
     public void setAantalDagen(int aD) {
@@ -21,37 +23,57 @@ public class AutoHuur {
     }
 
     public void setHuurder(Klant hrd) {
-            huurder = hrd;
+        huurder = hrd;
     }
 
-    public void setGehuurdeAuto(Auto gAuto) {
-        gehuurdeAuto = gAuto;}
 
-    public int getAantalDagen() {return aantalDagen;}
-    public Klant getHuurder() { return huurder;}
+    public void setGehuurdeAuto(Auto gAuto) {
+        gehuurdeAuto = gAuto;
+    }
+
+    public int getAantalDagen() {
+        return aantalDagen;
+    }
+
+    public Klant getHuurder() {
+        return huurder;
+    }
+
+
     public Auto getGehuurdeAuto() {
         return gehuurdeAuto;        // moet beveiligd tegen gehuurdeAuto == null
     }
 
     public double totaalPrijs() {
-        return aantalDagen * 100;
+//        if gehuurdeAuto
+        return aantalDagen * 2;
+//                gehuurdeAuto.getPrijsPerdag();
     }
 
     @Override
     public String toString() {
-//        if (gehuurdeAuto == null) {
-//            return "Er is geen auto bekend." + "\n" +
-//                    "op naam van: " + huurder + "\n" +
-//                    "aantal dagen: " + aantalDagen + " en dat kost //{add pricecalc. someplace.} " + "\n" +
-//                    "//  en dat kost 3150.0\t" + totaalPrijs();
-//        }
-
-        return gehuurdeAuto + "\n" +
+        if (gehuurdeAuto == null) {
+            return
+                "er is geen auto bekend" + "\n" +
+                "op naam van: " + huurder + "\n" +
+                "aantal dagen: " + aantalDagen + " en dat kost //{add pricecalc. someplace.} " + "\n" +
+                "//  en dat kost 3150.0\t" + totaalPrijs(); }
+        if (huurder == null) {
+            return
+                gehuurdeAuto + "\n" +
+                "op naam van: " + "<onbekend>" + "\n" +
+                "aantal dagen: " + aantalDagen + " en dat kost //{add pricecalc. someplace.} " + "\n" +
+                "//  en dat kost 3150.0\t" + totaalPrijs(); }
+        else {
+            return
+                gehuurdeAuto + "\n" +
                 "op naam van: " + huurder + "\n" +
                 "aantal dagen: " + aantalDagen + " en dat kost //{add pricecalc. someplace.} " + "\n" +
                 "//  en dat kost 3150.0\t" + totaalPrijs();
+        }
     }
 }
+
 
 //Let op: Bij het aanmaken van een AutoHuur-object is de multipliciteit van de beide associaties 0. Er moet
 
