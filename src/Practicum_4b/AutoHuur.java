@@ -1,7 +1,5 @@
 package Practicum_4b;
 
-import org.w3c.dom.ls.LSOutput;
-
 public class AutoHuur {
     private int aantalDagen;
     private Klant huurder;
@@ -17,8 +15,10 @@ public class AutoHuur {
     public void setAantalDagen(int aD) {
         if (aD > 0) {
             aantalDagen = aD;
-        } else {
+        } else if (aD <1) {
             throw new IllegalArgumentException("cannot be a negative period");
+        } else {
+            throw new IllegalArgumentException("aantal dagen does not exist");
         }
     }
 
@@ -26,6 +26,9 @@ public class AutoHuur {
         huurder = hrd;
     }
 
+    public Klant getHuurder() {
+        return huurder;
+    }
 
     public void setGehuurdeAuto(Auto gAuto) {
         gehuurdeAuto = gAuto;
@@ -35,9 +38,6 @@ public class AutoHuur {
         return aantalDagen;
     }
 
-    public Klant getHuurder() {
-        return huurder;
-    }
 
 
     public Auto getGehuurdeAuto() {
@@ -57,7 +57,7 @@ public class AutoHuur {
                 "er is geen huurder bekend" + "\n" +
                 "aantal dagen: " + aantalDagen + " en dat kost 0";
         }
-        if (gehuurdeAuto == null && huurder != null) {
+        else if (gehuurdeAuto == null && huurder != null) {
             return
                 "er is geen auto bekend" + "\n" +
                 "op naam van: " + huurder + "\n" +

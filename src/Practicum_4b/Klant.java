@@ -8,7 +8,6 @@ public class Klant {
             naam = nm;
         }
 
-
     public void setKorting(double kP) { kortingsPercentages = kP; }
     public double getKorting() { return kortingsPercentages; }
 
