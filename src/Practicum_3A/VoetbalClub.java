@@ -12,15 +12,17 @@ public class VoetbalClub {
 //    }
 
     public VoetbalClub(String nm, Integer gw, Integer ver, Integer gel) {
-        if (naam != "null") {
+
+        if(nm == null || nm.isEmpty())
+            naam = "FC";
+        else
             naam = nm;
-        } else if (naam == null) {
-            String fc = "FC";
-             fc = nm;
-        }
+
         gewonnen = gw;
         verloren = ver;
         gelijk = gel;
+
+
     }
 
     public void setNaam(String nm) {naam = nm; }
@@ -37,20 +39,24 @@ public class VoetbalClub {
     public Integer getGelijk() { return gelijk;}
 
     public Integer aantalPunten() {
-                return (gewonnen *3)+(gelijk);    }
+        return (gewonnen *3)+(gelijk);    }
     public Integer aantalGelijk() {
-                return gelijk;    }
+        return gelijk;    }
     public Integer aantalGespeeld() {
             return gelijk+gewonnen+verloren;    }
 
 
     public void verwerkResultaat(char ch) {
+
         if (ch == 'w')
             gewonnen = gewonnen + 1;
-        if (ch == 'g')
+        else if (ch == 'g')
             gelijk = gelijk + 1;
-        if (ch == 'v')
+        else if (ch == 'v')
             verloren = verloren + 1;
+            // foutieve input handelen
+        else  System.out.println("ongeldig intoetsing");
+
     }
     public String toString() {
         String s = naam + " " + aantalGespeeld() + " " + gewonnen + " " + gelijk + " " + verloren + " " + aantalPunten();

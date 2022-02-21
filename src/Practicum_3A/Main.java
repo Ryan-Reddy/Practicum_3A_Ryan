@@ -1,7 +1,7 @@
 package Practicum_3A;
 
 public class Main {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
     VoetbalClub ajx = new VoetbalClub("Ajax      ", 0, 0, 0);
     VoetbalClub feij = new VoetbalClub("Feijenoord", 0, 0, 0);
     VoetbalClub empty = new VoetbalClub("",0,0,0);
