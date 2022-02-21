@@ -4,6 +4,10 @@ public class Main {
   public static void main(String[] args) {
     VoetbalClub ajx = new VoetbalClub("Ajax      ", 0, 0, 0);
     VoetbalClub feij = new VoetbalClub("Feijenoord", 0, 0, 0);
+    VoetbalClub empty = new VoetbalClub("",0,0,0);
+
+    System.out.println(empty);
+    System.out.println("start");
 
     feij.verwerkResultaat('w');
     feij.verwerkResultaat('w');

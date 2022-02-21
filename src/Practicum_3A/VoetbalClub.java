@@ -12,7 +12,12 @@ public class VoetbalClub {
 //    }
 
     public VoetbalClub(String nm, Integer gw, Integer ver, Integer gel) {
-        naam = nm;
+        if (naam != "null") {
+            naam = nm;
+        } else if (naam == null) {
+            String fc = "FC";
+             fc = nm;
+        }
         gewonnen = gw;
         verloren = ver;
         gelijk = gel;
